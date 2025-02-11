@@ -13,7 +13,7 @@ function getTwitchUser($access_token) {
     $url = "https://api.twitch.tv/helix/users";
     $headers = [
         "Authorization: Bearer $access_token",
-        "Client-Id: d87eeiwk7h71fryewxo0x09gv5qak9"
+        "Client-Id: ".CLIENT_ID.""
     ];
 
     $ch = curl_init();
