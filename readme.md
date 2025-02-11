@@ -3,7 +3,8 @@
   
 
 This repo is a basic example implementation to make a twitch browser interactive game in PHP/Ajax
-Its main functionnality for now is to get your viewers "display_name" which had typed "!play" in your chat
+
+Its main functionnality for now is to get your viewers "display_name" which typed "!play" in your chat
 
 ## HOW TO USE IT :
 
@@ -23,7 +24,7 @@ The file handles your oAuth connection to Twitch
 
 ## Dashboard.php
 
-The file contain the main logic : a simple list into a div with the functionnality in ajax to adding the viewers display_name which typed "!play" in the channel chat.
+The file contains the main logic : a simple list into a div with the functionnality in ajax to adding the viewers display_name which typed "!play" in the channel chat.
 
   
 
