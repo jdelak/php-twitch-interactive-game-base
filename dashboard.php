@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('constants.php');
 
 if (!isset($_SESSION['access_token'])) {
     header("Location: index.php");
@@ -7,13 +8,12 @@ if (!isset($_SESSION['access_token'])) {
 }
 
 $access_token = $_SESSION['access_token'];
-$channel = 'VOTRE_CHANNEL';
 
 function getTwitchUser($access_token) {
     $url = "https://api.twitch.tv/helix/users";
     $headers = [
         "Authorization: Bearer $access_token",
-        "Client-Id: VOTRE_CLIENT_ID"
+        "Client-Id: d87eeiwk7h71fryewxo0x09gv5qak9"
     ];
 
     $ch = curl_init();
@@ -41,17 +41,17 @@ $user_name = $user_data['data'][0]['display_name'];
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Bienvenue, <?php echo htmlspecialchars($user_name); ?></h1>
+    <h1>Welcome, <?php echo htmlspecialchars($user_name); ?></h1>
     <div id="user-list">
-        <h2>Liste des utilisateurs ayant envoyé "!play"</h2>
+        <h2>Liste of users with "!play"</h2>
         <ul id="user-list-items"></ul>
     </div>
 
     <script>
         $(document).ready(function() {
-            const channel = '<?php echo $channel; ?>';
+            const channel = '<?php echo CHANNEL; ?>';
             const accessToken = '<?php echo $access_token; ?>';
-            const clientId = 'VOTRE_CLIENT_ID';
+            const clientId = '<?php echo CLIENT_ID ?>';
 
             const socket = new WebSocket('wss://irc-ws.chat.twitch.tv:443');
 

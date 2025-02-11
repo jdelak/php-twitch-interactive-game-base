@@ -1,10 +1,11 @@
 <?php
 session_start();
+require_once('constants.php');
 
-$client_id = 'VOTRE_CLIENT_ID';
-$client_secret = 'VOTRE_CLIENT_SECRET';
-$redirect_uri = 'http://votre-site.com/callback.php';
-$scope = 'chat:read chat:edit';
+$client_id = CLIENT_ID;
+$client_secret = CLIENT_SECRET;
+$redirect_uri = REDIRECT_URI;
+$scope = SCOPES;
 
 if (!isset($_GET['code'])) {
     $auth_url = "https://id.twitch.tv/oauth2/authorize"

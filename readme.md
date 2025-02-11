@@ -11,7 +11,7 @@ Its main functionnality for now is to get your viewers "display_name" which type
 - Create a Twitch Developer account if you don't have one yet: https://dev.twitch.tv/
 (you have to activate double authentication on your twitch account before)
 - Create an application and get the client_id, the secret (click on "new secret" in your application management page) and at least one oAuth redirection uri
-- replace client_id, client_secret, channel and redirect_uri with yours
+- replace client_id, client_secret, channel and redirect_uri with yours in the constants.php file
 
   
   
